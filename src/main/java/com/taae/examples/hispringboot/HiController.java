@@ -16,13 +16,13 @@ public class HiController {
 	
 	@Autowired TeamDao teamDao;
 	
-	@RequestMapping(value= "/team/{name}")
+	@RequestMapping(value= "/cteam/{name}")
 	public @ResponseBody Team hiThere(@PathVariable String name){
 		Team team = teamDao.findByName(name);
 		return team;
 	}
 	
-	@RequestMapping("/teams")
+	@RequestMapping("/cteams")
 	public @ResponseBody List<Team> teams(){
 		return teamDao.findAll();
 	}
