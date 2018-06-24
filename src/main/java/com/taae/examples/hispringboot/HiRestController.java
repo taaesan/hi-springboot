@@ -2,11 +2,14 @@ package com.taae.examples.hispringboot;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.HashSet;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.taae.examples.hispringboot.model.Player;
 
 @RestController
 @RequestMapping("api")
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HiRestController {
 
 	private String saying;
+
 
 	@RequestMapping(method = RequestMethod.GET, value = "/hi", produces = "text/plain")
 	public String hi() {
@@ -27,6 +31,7 @@ public class HiRestController {
 		}
 		return saying+" " + hostName;
 	}
+
 
 	public String getSaying() {
 		return saying;
